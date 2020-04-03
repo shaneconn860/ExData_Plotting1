@@ -23,6 +23,9 @@ data <- read.table(hpcfile, na.strings = "?", header = T, sep=";")
 #Subsets the Date column given dates specified
 data2 <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
+#Remove missing values
+na.omit(data2)
+
 #Convert Date and Time to Date/Time classes
 newtime <-strptime(paste(data2$Date, data2$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
@@ -36,3 +39,7 @@ plot(data2$newtime, data2$Sub_metering_1, type="l", col=columnlines[1], xlab="",
 lines(data2$newtime, data2$Sub_metering_2, col=columnlines[2])
 lines(data2$newtime, data2$Sub_metering_3, col=columnlines[3])
 legend("topright", legend=labels, col=columnlines, lty="solid")
+
+# Save to png file
+dev.copy(png, file="plot3.png", height=480, width=480)
+dev.off()
