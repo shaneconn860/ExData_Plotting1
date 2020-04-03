@@ -41,7 +41,7 @@ plot(data2$newtime, data2$Voltage, type="l", col="black", xlab="", ylab="Voltage
 plot(data2$newtime, data2$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(data2$newtime, data2$Sub_metering_2, type="l", col="red")
 lines(data2$newtime, data2$Sub_metering_3, type="l", col="blue")
-legend("topright", bty="n", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=2, lty=1, col=columnlines)
+legend("topright", bty="n", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=c(1,1,1), col=columnlines)
 plot(data2$newtime, data2$Global_reactive_power, type="l", col="black", xlab="", ylab="Global_reactive_power")
 
 # Save to png
