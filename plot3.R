@@ -34,11 +34,10 @@ data2 <- cbind(newtime, data2)
 
 #Plot3
 columnlines <- c("black", "red", "blue")
-labels <- c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 plot(data2$newtime, data2$Sub_metering_1, type="l", col=columnlines[1], xlab="", ylab="Energy sub metering")
 lines(data2$newtime, data2$Sub_metering_2, col=columnlines[2])
 lines(data2$newtime, data2$Sub_metering_3, col=columnlines[3])
-legend("topright", legend=labels, col=columnlines, lty="solid")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=columnlines, lwd=c(1,1,1))
 
 # Save to png file
 dev.copy(png, file="plot3.png", height=480, width=480)
